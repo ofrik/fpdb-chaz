@@ -2,4 +2,5 @@
 windist
 build
 *.zip
+/dev_env_setup/windows/downloaded_dependencies
 .idea
