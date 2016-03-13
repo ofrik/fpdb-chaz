@@ -19,7 +19,7 @@ set PATH=%PATH%;%GNUWIN32_HOME%\bin
 
 set DEPS=%CD%\downloaded_dependencies
 mkdir "%DEPS%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1.exe"
+IF NOT EXIST "%DEPS%/unzip-5.51-1.exe" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1.exe"
 @echo.
 @echo.
 @echo INSTALLING Gnuwin32 Utils
@@ -29,21 +29,21 @@ pause
 "%DEPS%\unzip-5.51-1.exe"
 
 REM INSTALL OTHERS GUNWIN32 TOOLS (NEEDED FOR LATER)
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-dep.zip"
+IF NOT EXIST "%DEPS%/sed-4.2.1-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-dep.zip"
 unzip -o "%DEPS%\sed-4.2.1-dep.zip" -d "%GNUWIN32_HOME%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-bin.zip"
+IF NOT EXIST "%DEPS%/sed-4.2.1-bin.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-bin.zip"
 unzip -o "%DEPS%\sed-4.2.1-bin.zip" -d "%GNUWIN32_HOME%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-dep.zip"
+IF NOT EXIST "%DEPS%/grep-2.5.4-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-dep.zip"
 unzip -o "%DEPS%\grep-2.5.4-dep.zip" -d "%GNUWIN32_HOME%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-bin.zip"
+IF NOT EXIST "%DEPS%/grep-2.5.4-bin.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-bin.zip"
 unzip -o "%DEPS%\grep-2.5.4-bin.zip" -d "%GNUWIN32_HOME%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-bin.zip"
+IF NOT EXIST "%DEPS%/zip-3.0-bin.zi" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-bin.zip"
 unzip -o "%DEPS%\zip-3.0-bin.zip" -d "%GNUWIN32_HOME%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-dep.zip"
+IF NOT EXIST "%DEPS%/zip-3.0-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-dep.zip"
 unzip -o "%DEPS%\zip-3.0-dep.zip" -d "%GNUWIN32_HOME%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-bin.zip"
+IF NOT EXIST "%DEPS%/coreutils-5.3.0-bin.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-bin.zip"
 unzip -o "%DEPS%\coreutils-5.3.0-bin.zip" -d "%GNUWIN32_HOME%"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-dep.zip"
+IF NOT EXIST "%DEPS%/coreutils-5.3.0-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-dep.zip"
 unzip -o "%DEPS%\coreutils-5.3.0-dep.zip" -d "%GNUWIN32_HOME%"
 
 REM REM INSTALL GIT SCM TOOL
@@ -61,7 +61,7 @@ REM REM %DEPS%\Git-1.9.5-preview20141217.exe
 REM REM pause
 
 REM INSTALL PYTHON 2.7
-wget -nc --no-check-certificate -c -P "%DEPS%" "https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi"
+IF NOT EXIST "%DEPS%/python-2.7.10.msi" wget -nc --no-check-certificate -c -P "%DEPS%" "https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi"
 @echo.
 @echo.
 @echo INSTALLING Python 2.7.10
@@ -97,7 +97,7 @@ REM DOWNLOAD QT AND BUILD FROM SOURCE BECAUSE YOU NEED TO BUILD WITH THE SAME CO
 @echo It takes ages! Take a nap...
 @echo.
 pause
-wget -nc -c -P "%DEPS%" "http://www.7-zip.org/a/7za920.zip"
+IF NOT EXIST "%DEPS%/7za920.zip" wget -nc -c -P "%DEPS%" "http://www.7-zip.org/a/7za920.zip"
 pushd "%DEPS%"
 unzip -o -q 7za920.zip -d .
 popd
@@ -106,7 +106,7 @@ set QMAKESPEC=win32-msvc2008
 set QT5_FOLDER=qt5
 set QT5_HOME=C:\%QT5_FOLDER%
 mkdir "%QT5_HOME%"
-wget -nc -c -P "%QT5_HOME%" "http://download.qt.io/archive/qt/5.3/5.3.2/single/qt-everywhere-opensource-src-5.3.2.zip"
+IF NOT EXIST "%DEPS%/qt-everywhere-opensource-src-5.3.2.zip" wget -nc -c -P "%QT5_HOME%" "http://download.qt.io/archive/qt/5.3/5.3.2/single/qt-everywhere-opensource-src-5.3.2.zip"
 pushd "%QT5_HOME%"
 "%DEPS%\7za.exe" x qt-everywhere-opensource-src-5.3.2.zip > nul
 mv qt-everywhere-opensource-src-5.3.2/* .
@@ -128,7 +128,7 @@ REM INSTALLING MICROSOFT VISUAL C++ 2008 REDISTRIBUABLE PACKAGE
 echo Follow setup processes and ***DON'T CHANGE ANY OPTIONS***
 @echo.
 pause
-wget -nc -c -P "%DEPS%" "http://download.microsoft.com/download/1/1/1/1116b75a-9ec3-481a-a3c8-1777b5381140/vcredist_x86.exe"
+IF NOT EXIST "%DEPS%/vcredist_x86.exe" wget -nc -c -P "%DEPS%" "http://download.microsoft.com/download/1/1/1/1116b75a-9ec3-481a-a3c8-1777b5381140/vcredist_x86.exe"
 "%DEPS%\vcredist_x86.exe"
 
 REM INSTALLING SEVERAL PYTHON LIBRARIES
@@ -138,18 +138,18 @@ REM INSTALLING SEVERAL PYTHON LIBRARIES
 echo Follow setup processes and ***DON'T CHANGE ANY OPTIONS***
 @echo.
 pause
-wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/numpy/files/NumPy/1.9.2/numpy-1.9.2-win32-superpack-python2.7.exe"
+IF NOT EXIST "%DEPS%/numpy-1.9.2-win32-superpack-python2.7.exe" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/numpy/files/NumPy/1.9.2/numpy-1.9.2-win32-superpack-python2.7.exe"
 "%DEPS%\numpy-1.9.2-win32-superpack-python2.7.exe" /arch nosse
-wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pywin32/files/pywin32/Build%%20219/pywin32-219.win32-py2.7.exe"
+IF NOT EXIST "%DEPS%/pywin32-219.win32-py2.7.exe" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pywin32/files/pywin32/Build%%20219/pywin32-219.win32-py2.7.exe"
 "%DEPS%\pywin32-219.win32-py2.7.exe"
-wget -nc -c -P "%DEPS%" "http://www.stickpeople.com/projects/python/win-psycopg/2.6.0/psycopg2-2.6.0.win32-py2.7-pg9.4.1-release.exe"
+IF NOT EXIST "%DEPS%/psycopg2-2.6.0.win32-py2.7-pg9.4.1-release.exe" wget -nc -c -P "%DEPS%" "http://www.stickpeople.com/projects/python/win-psycopg/2.6.0/psycopg2-2.6.0.win32-py2.7-pg9.4.1-release.exe"
 "%DEPS%\psycopg2-2.6.0.win32-py2.7-pg9.4.1-release.exe"
-wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/fpdb/fpdb/pypoker-eval-win32/pokereval-138.win32-py2.7.exe"
+IF NOT EXIST "%DEPS%/pokereval-138.win32-py2.7.exe" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/fpdb/fpdb/pypoker-eval-win32/pokereval-138.win32-py2.7.exe"
 "%DEPS%\pokereval-138.win32-py2.7.exe"
-wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/mysql-python/files/mysql-python/1.2.3/MySQL-python-1.2.3.win32-py2.7.msi"
+IF NOT EXIST "%DEPS%/MySQL-python-1.2.3.win32-py2.7.msi" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/mysql-python/files/mysql-python/1.2.3/MySQL-python-1.2.3.win32-py2.7.msi"
 "%DEPS%\MySQL-python-1.2.3.win32-py2.7.msi"
 
-wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.6/sip-4.16.6.zip"
+IF NOT EXIST "%DEPS%/sip-4.16.6.zip" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.6/sip-4.16.6.zip"
 pushd "%DEPS%"
 unzip -o -q sip-4.16.6.zip -d .
 cd sip-4.16.6
@@ -159,7 +159,7 @@ nmake 2>&1 | tee -a "%DEPS%\build_python_deps.log"
 nmake install 2>&1 | tee -a "%DEPS%\build_python_deps.log"
 popd
 
-wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.3.2/PyQt-gpl-5.3.2.zip"
+IF NOT EXIST "%DEPS%/PyQt-gpl-5.3.2.zip" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.3.2/PyQt-gpl-5.3.2.zip"
 pushd "%DEPS%"
 unzip -o -q PyQt-gpl-5.3.2.zip -d .
 cd PyQt-gpl-5.3.2
