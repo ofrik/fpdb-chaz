@@ -19,7 +19,7 @@ set PATH=%PATH%;%GNUWIN32_HOME%\bin
 
 set DEPS=%CD%\downloaded_dependencies
 mkdir "%DEPS%"
-IF NOT EXIST "%DEPS%/unzip-5.51-1.exe" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1.exe"
+IF NOT EXIST "%DEPS%/unzip-5.51-1.exe" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1.exe"
 @echo.
 @echo.
 @echo INSTALLING Gnuwin32 Utils
@@ -29,21 +29,21 @@ pause
 "%DEPS%\unzip-5.51-1.exe"
 
 REM INSTALL OTHERS GUNWIN32 TOOLS (NEEDED FOR LATER)
-IF NOT EXIST "%DEPS%/sed-4.2.1-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-dep.zip"
+IF NOT EXIST "%DEPS%/sed-4.2.1-dep.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-dep.zip"
 unzip -o "%DEPS%\sed-4.2.1-dep.zip" -d "%GNUWIN32_HOME%"
-IF NOT EXIST "%DEPS%/sed-4.2.1-bin.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-bin.zip"
+IF NOT EXIST "%DEPS%/sed-4.2.1-bin.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1/sed-4.2.1-bin.zip"
 unzip -o "%DEPS%\sed-4.2.1-bin.zip" -d "%GNUWIN32_HOME%"
-IF NOT EXIST "%DEPS%/grep-2.5.4-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-dep.zip"
+IF NOT EXIST "%DEPS%/grep-2.5.4-dep.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-dep.zip"
 unzip -o "%DEPS%\grep-2.5.4-dep.zip" -d "%GNUWIN32_HOME%"
-IF NOT EXIST "%DEPS%/grep-2.5.4-bin.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-bin.zip"
+IF NOT EXIST "%DEPS%/grep-2.5.4-bin.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4/grep-2.5.4-bin.zip"
 unzip -o "%DEPS%\grep-2.5.4-bin.zip" -d "%GNUWIN32_HOME%"
-IF NOT EXIST "%DEPS%/zip-3.0-bin.zi" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-bin.zip"
+IF NOT EXIST "%DEPS%/zip-3.0-bin.zi" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-bin.zip"
 unzip -o "%DEPS%\zip-3.0-bin.zip" -d "%GNUWIN32_HOME%"
-IF NOT EXIST "%DEPS%/zip-3.0-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-dep.zip"
+IF NOT EXIST "%DEPS%/zip-3.0-dep.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/zip/3.0/zip-3.0-dep.zip"
 unzip -o "%DEPS%\zip-3.0-dep.zip" -d "%GNUWIN32_HOME%"
-IF NOT EXIST "%DEPS%/coreutils-5.3.0-bin.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-bin.zip"
+IF NOT EXIST "%DEPS%/coreutils-5.3.0-bin.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-bin.zip"
 unzip -o "%DEPS%\coreutils-5.3.0-bin.zip" -d "%GNUWIN32_HOME%"
-IF NOT EXIST "%DEPS%/coreutils-5.3.0-dep.zip" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-dep.zip"
+IF NOT EXIST "%DEPS%/coreutils-5.3.0-dep.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-dep.zip"
 unzip -o "%DEPS%\coreutils-5.3.0-dep.zip" -d "%GNUWIN32_HOME%"
 
 REM REM INSTALL GIT SCM TOOL
@@ -138,18 +138,18 @@ REM INSTALLING SEVERAL PYTHON LIBRARIES
 echo Follow setup processes and ***DON'T CHANGE ANY OPTIONS***
 @echo.
 pause
-IF NOT EXIST "%DEPS%/numpy-1.9.2-win32-superpack-python2.7.exe" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/numpy/files/NumPy/1.9.2/numpy-1.9.2-win32-superpack-python2.7.exe"
+IF NOT EXIST "%DEPS%/numpy-1.9.2-win32-superpack-python2.7.exe" wget --no-check-certificate -nc -c -P "%DEPS%" "http://sourceforge.net/projects/numpy/files/NumPy/1.9.2/numpy-1.9.2-win32-superpack-python2.7.exe"
 "%DEPS%\numpy-1.9.2-win32-superpack-python2.7.exe" /arch nosse
-IF NOT EXIST "%DEPS%/pywin32-219.win32-py2.7.exe" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pywin32/files/pywin32/Build%%20219/pywin32-219.win32-py2.7.exe"
+IF NOT EXIST "%DEPS%/pywin32-219.win32-py2.7.exe" wget --no-check-certificate -nc -c -P "%DEPS%" "https://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe"
 "%DEPS%\pywin32-219.win32-py2.7.exe"
 IF NOT EXIST "%DEPS%/psycopg2-2.6.0.win32-py2.7-pg9.4.1-release.exe" wget -nc -c -P "%DEPS%" "http://www.stickpeople.com/projects/python/win-psycopg/2.6.0/psycopg2-2.6.0.win32-py2.7-pg9.4.1-release.exe"
 "%DEPS%\psycopg2-2.6.0.win32-py2.7-pg9.4.1-release.exe"
 IF NOT EXIST "%DEPS%/pokereval-138.win32-py2.7.exe" wget -nc -c -P "%DEPS%" "http://downloads.sourceforge.net/project/fpdb/fpdb/pypoker-eval-win32/pokereval-138.win32-py2.7.exe"
 "%DEPS%\pokereval-138.win32-py2.7.exe"
-IF NOT EXIST "%DEPS%/MySQL-python-1.2.3.win32-py2.7.msi" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/mysql-python/files/mysql-python/1.2.3/MySQL-python-1.2.3.win32-py2.7.msi"
+IF NOT EXIST "%DEPS%/MySQL-python-1.2.3.win32-py2.7.msi" wget --no-check-certificate -nc -c -P "%DEPS%" "http://sourceforge.net/projects/mysql-python/files/mysql-python/1.2.3/MySQL-python-1.2.3.win32-py2.7.msi"
 "%DEPS%\MySQL-python-1.2.3.win32-py2.7.msi"
 
-IF NOT EXIST "%DEPS%/sip-4.16.6.zip" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.6/sip-4.16.6.zip"
+IF NOT EXIST "%DEPS%/sip-4.16.6.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.6/sip-4.16.6.zip"
 pushd "%DEPS%"
 unzip -o -q sip-4.16.6.zip -d .
 cd sip-4.16.6
@@ -159,7 +159,7 @@ nmake 2>&1 | tee -a "%DEPS%\build_python_deps.log"
 nmake install 2>&1 | tee -a "%DEPS%\build_python_deps.log"
 popd
 
-IF NOT EXIST "%DEPS%/PyQt-gpl-5.3.2.zip" wget -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.3.2/PyQt-gpl-5.3.2.zip"
+IF NOT EXIST "%DEPS%/PyQt-gpl-5.3.2.zip" wget --no-check-certificate -nc -c -P "%DEPS%" "http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.3.2/PyQt-gpl-5.3.2.zip"
 pushd "%DEPS%"
 unzip -o -q PyQt-gpl-5.3.2.zip -d .
 cd PyQt-gpl-5.3.2
